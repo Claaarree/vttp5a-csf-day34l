@@ -1,0 +1,19 @@
+<h1>Fakery Gallery Photos</h1>
+<hr>
+<br><br>
+
+<div class="container">
+    <div class="row">
+        @for (photo of photos; track $index) {
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src={{photo.photo_url}} alt={{photo.caption}} width="50%" height="50%">
+                    <div class="caption">
+                        <h3>{{ photo.caption }}</h3>
+                        <p>{{ photo.photo_url }}</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

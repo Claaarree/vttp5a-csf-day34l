@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ExampleComponent } from './component/example/example.component';
+import { FileUploadComponent } from './component/file-upload/file-upload.component';
+import { provideHttpClient } from '@angular/common/http';
+import { GalleryComponent } from './component/gallery/gallery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExampleComponent
+    ExampleComponent,
+    FileUploadComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(), provideClientHydration()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,16 +6,26 @@ import { ExampleComponent } from './component/example/example.component';
 import { FileUploadComponent } from './component/file-upload/file-upload.component';
 import { provideHttpClient } from '@angular/common/http';
 import { GalleryComponent } from './component/gallery/gallery.component';
+import { CreateEmployeeComponent } from './component/create-employee/create-employee.component';
+import { ListEmployeeComponent } from './component/list-employee/list-employee.component';
+import { UpdateEmployeeComponent } from './component/update-employee/update-employee.component';
+import { DetailsEmployeeComponent } from './component/details-employee/details-employee.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExampleComponent,
     FileUploadComponent,
-    GalleryComponent
+    GalleryComponent,
+    CreateEmployeeComponent,
+    ListEmployeeComponent,
+    UpdateEmployeeComponent,
+    DetailsEmployeeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideHttpClient(), provideClientHydration()

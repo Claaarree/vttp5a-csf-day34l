@@ -11,6 +11,7 @@ import { ListEmployeeComponent } from './component/list-employee/list-employee.c
 import { UpdateEmployeeComponent } from './component/update-employee/update-employee.component';
 import { DetailsEmployeeComponent } from './component/details-employee/details-employee.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [
     provideHttpClient(), provideClientHydration()

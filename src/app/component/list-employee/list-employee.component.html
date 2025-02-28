@@ -22,7 +22,7 @@
                         <td>{{ employee.lastName }}</td>
                         <td>{{ employee.emailId }}</td>
                         <td>
-                            <button class="btn btn-info">Details</button>
+                            <button class="btn btn-info" (click)="viewEmployeeDetails(employee.id)">Details</button>
                             <button class="btn btn-warning" (click)="updateEmployee(employee.id)">Update</button>
                             <button class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button>
                         </td>

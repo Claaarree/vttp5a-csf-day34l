@@ -12,6 +12,9 @@ import { UpdateEmployeeComponent } from './component/update-employee/update-empl
 import { DetailsEmployeeComponent } from './component/details-employee/details-employee.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { RouteGuardService } from './service/route-guard.service';
+import { DeactivateGuardService } from './service/deactivate-guard.service';
+import { TestComponent } from './component/test/test.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     CreateEmployeeComponent,
     ListEmployeeComponent,
     UpdateEmployeeComponent,
-    DetailsEmployeeComponent
+    DetailsEmployeeComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,10 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     AppRoutingModule
   ],
   providers: [
-    provideHttpClient(), provideClientHydration()
+    provideHttpClient(), 
+    provideClientHydration(),
+    RouteGuardService,
+    DeactivateGuardService
   ],
   bootstrap: [AppComponent]
 })

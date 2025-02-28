@@ -7,17 +7,20 @@ import { ExampleComponent } from '../component/example/example.component';
 import { FileUploadComponent } from '../component/file-upload/file-upload.component';
 import { GalleryComponent } from '../component/gallery/gallery.component';
 import { UpdateEmployeeComponent } from '../component/update-employee/update-employee.component';
-import { AppComponent } from '../app.component';
+import { RouteGuardService } from '../service/route-guard.service';
+import { TestComponent } from '../component/test/test.component';
+import { DeactivateGuardService } from '../service/deactivate-guard.service';
 
 const routes: Routes = [
   {path: "", component: ListEmployeeComponent},
   {path: "employeeList" , component: ListEmployeeComponent},
   {path: "employeeCreate" , component: CreateEmployeeComponent},
-  {path: "employeeDetails" , component: DetailsEmployeeComponent},
-  {path: "employeeUpdate/:id" , component: UpdateEmployeeComponent},
+  {path: "employeeDetails/:id" , component: DetailsEmployeeComponent},
+  {path: "employeeUpdate/:id" , component: UpdateEmployeeComponent, canActivate:[RouteGuardService]},
   {path: "example" , component: ExampleComponent},
   {path: "fileUpload" , component: FileUploadComponent},
   {path: "gallery" , component: GalleryComponent},
+  {path: "test" , component: TestComponent, canDeactivate: [DeactivateGuardService]},
   {path: "**" , redirectTo: "/", pathMatch: 'full'}
 ]
 

@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { RouteGuardService } from './service/route-guard.service';
 import { DeactivateGuardService } from './service/deactivate-guard.service';
 import { TestComponent } from './component/test/test.component';
+import { DebounceComponent } from './component/debounce/debounce.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TestComponent } from './component/test/test.component';
     ListEmployeeComponent,
     UpdateEmployeeComponent,
     DetailsEmployeeComponent,
-    TestComponent
+    TestComponent,
+    DebounceComponent
   ],
   imports: [
     BrowserModule,

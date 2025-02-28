@@ -10,6 +10,7 @@ import { UpdateEmployeeComponent } from '../component/update-employee/update-emp
 import { RouteGuardService } from '../service/route-guard.service';
 import { TestComponent } from '../component/test/test.component';
 import { DeactivateGuardService } from '../service/deactivate-guard.service';
+import { DebounceComponent } from '../component/debounce/debounce.component';
 
 const routes: Routes = [
   {path: "", component: ListEmployeeComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: "example" , component: ExampleComponent},
   {path: "fileUpload" , component: FileUploadComponent},
   {path: "gallery" , component: GalleryComponent},
+  {path: "debounce" , component: DebounceComponent},
   {path: "test" , component: TestComponent, canDeactivate: [DeactivateGuardService]},
   {path: "**" , redirectTo: "/", pathMatch: 'full'}
 ]

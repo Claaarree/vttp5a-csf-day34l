@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { from, map } from 'rxjs';
+import { from, map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-example',
@@ -37,10 +37,30 @@ export class ExampleComponent implements OnInit{
     ).subscribe(data => console.log(data))
   }
 
+  numberSeries = from([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+  sumOfNumbers() {
+    this.numberSeries
+      .pipe(tap(data => console.log("Tapping: " + (data + 1))))
+      .subscribe(data => console.log("Subscribe: " + data))
+  }
+
+  mapAndtap() {
+    this.numberSeries
+      .pipe(
+        tap(data => console.log("Before change: " + data)),
+        map(data => data * 3),
+        tap(data => console.log("After changing: " + data))
+      )
+      .subscribe(data => console.log("Subscribe: " + data))
+  }
+
   constructor() {}
 
   ngOnInit(): void {
-    this.multiplyBy3()
+    // this.multiplyBy3()
+    // this.sumOfNumbers()
+    this.mapAndtap()
   }
 
 }
